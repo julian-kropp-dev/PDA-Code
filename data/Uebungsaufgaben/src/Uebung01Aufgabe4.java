@@ -9,7 +9,7 @@ public class Uebung01Aufgabe4 {
         int startnumber = 7;
         int result = 0;
         int counter = 0;
-        //while loop which adds int 6 while result >= 30
+        //while-loop, which adds int 6 while result <= 30
         while (result <= 30){
             startnumber += 6;
             result = startnumber;
