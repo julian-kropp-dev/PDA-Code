@@ -1,5 +1,5 @@
 //Schreiben Sie ein Programm in Java, das die Fakultät zu einer gegebenen Zahl a berechnet.
-public class eins_e {
+public class Eins_E {
     public static void main(String[] args){
         int a = 5;
         int fakultaet = 1;

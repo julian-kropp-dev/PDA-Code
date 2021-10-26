@@ -1,5 +1,5 @@
 // Schreiben Sie ein Programm in Java, das alle geraden Zahlen zwischen 9 und 255 aufsummiert und das Ergebnis ausgibt.
-public class eins_c {
+public class Eins_C {
     public static void main(String[] args){
         int zahl = 255;
         int ergebnis = 0;
