@@ -10,7 +10,7 @@ public class ValueCombination {
         System.out.println(sumDouble);
 
         int sumInt = (int) (i + l + f + d + c); // I don't understand my own line of code lol
-        System.out.println(sumDouble);
+        System.out.println(sumInt);
 
     }
 }
