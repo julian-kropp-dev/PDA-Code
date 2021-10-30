@@ -4,7 +4,7 @@ public class Music {
         Scanner userInput = new Scanner(System.in);
         System.out.println("Anzahl Downloads (>=0)");
         int downloads = userInput.nextInt();
-        int counter = 0;
+        int counter = 1;
         double costs = 0.0;
         while (counter <= 5 && downloads != 0){
             downloads -= 1;
@@ -15,7 +15,7 @@ public class Music {
             counter +=1;
             costs += 0.2;
         }
-        while (counter > 35 && downloads != -1){
+        while (counter > 35 && downloads != 0){
             downloads -= 1;
             counter += 1;
             costs += 0.15;
