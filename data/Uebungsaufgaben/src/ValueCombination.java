@@ -9,7 +9,7 @@ public class ValueCombination {
         double sumDouble = i + l + f + d + c; // char c's value is 99.0 so the System.out.println(sumDouble) is 149.0
         System.out.println(sumDouble);
 
-        int sumInt = (int) (i + l + f + d + c); // I don't understand my own line of code lol
+        int sumInt = i + (int) (l + f + d + c);
         System.out.println(sumInt);
 
     }
