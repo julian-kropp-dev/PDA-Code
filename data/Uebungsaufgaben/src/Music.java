@@ -1,5 +1,9 @@
 import java.util.Scanner;
 public class Music {
+    private static double round(double value, int decimalPoints) {
+        double d = Math.pow(10, decimalPoints);
+        return Math.round(value * d) / d;
+    }
     public static void main(String[] args) {
         Scanner userInput = new Scanner(System.in);
         System.out.println("Anzahl Downloads (>=0)");
@@ -20,6 +24,6 @@ public class Music {
             counter += 1;
             costs += 0.15;
         }
-        System.out.println("Kosten = "+ costs + " EURO");
+        System.out.println("Kosten = "+ round(costs,2) + " EURO");
     }
 }
