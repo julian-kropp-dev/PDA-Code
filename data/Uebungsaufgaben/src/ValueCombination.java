@@ -6,7 +6,7 @@ public class ValueCombination {
         double d = 20.5D;
         char c = 'c';
 
-        double sumDouble = i + l + f + d + c; // char c's value is 99.0 so the System.out.println(sumDouble) is 149.0
+        double sumDouble = i + l + f + d + c; // char c's value is 99.0 so the System.out.println(sumDouble) is 149.5
         System.out.println(sumDouble);
 
         int sumInt = i + (int) (l + f + d + c);
