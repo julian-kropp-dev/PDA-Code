@@ -10,7 +10,7 @@ public class ValueCombination {
         System.out.println(sumDouble);
 
         int sumInt = i + (int) (l + f + d + c);
-        System.out.println(sumInt);
+        System.out.println(sumInt); // System.out.println(sumInt) is 149.
 
     }
 }
