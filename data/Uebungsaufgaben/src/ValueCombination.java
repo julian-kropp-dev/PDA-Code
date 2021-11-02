@@ -3,7 +3,7 @@ public class ValueCombination {
         int i = 5;
         long l = 10L;
         float f = 15.0F;
-        double d = 20.0D;
+        double d = 20.5D;
         char c = 'c';
 
         double sumDouble = i + l + f + d + c; // char c's value is 99.0 so the System.out.println(sumDouble) is 149.0
