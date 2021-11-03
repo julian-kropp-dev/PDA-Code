@@ -3,8 +3,7 @@ public class GuessingGame {
     public static void main(String[] args) {
         int randomNumber = (int) (Math.random() * 101.0);
         int guesses = 0;
-        boolean guess = false;
-        while (!guess){
+        while (true){
             Scanner userInput = new Scanner(System.in);
             System.out.println("Zahl:");
             int usersGuess = userInput.nextInt();
@@ -19,7 +18,7 @@ public class GuessingGame {
             else {
                 System.out.println("Geschafft! Zufallszahl war " + randomNumber);
                 System.out.println("Anzahl der Versuche: " + guesses);
-                guess = true;
+                break;
 
             }
         }
