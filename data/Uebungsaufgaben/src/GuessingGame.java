@@ -17,7 +17,7 @@ public class GuessingGame {
             }
             else {
                 System.out.println("Geschafft! Zufallszahl war " + randomNumber);
-                System.out.println("Anzahl der Versuche: " + guesses);
+                System.out.println("Anzahl der Versuche: " + (guesses + 1));
                 break; //random number guessed, while-loop ends
 
             }
