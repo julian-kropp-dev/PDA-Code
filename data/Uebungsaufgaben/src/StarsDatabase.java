@@ -1,13 +1,8 @@
-import java.util.Scanner;
 public class StarsDatabase {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+
         boolean id_found = false;
         boolean distance_found = false;
-
-        System.out.println("What's the key of the star you're looking for?");
-        String user_input = scanner.nextLine(); //user input for the star's key
-        scanner.close();
 
         String [] names = {"Sirius", "Alpha Centauri", "Rigel", "Almaaz", "Luhman 16"};
         String [] ids = {"TYC 5949-2777-1", "TYC 9007-5849-1", "TYC 5331-1752-1", "TYC 2907-1275-1", "WISE J1049-5319A"};
@@ -17,7 +12,7 @@ public class StarsDatabase {
 
         //for-loop checks whether there is a star with the user's id or not. If there is a star with this id it prints out the appropriate name of the star
         for (int i = 0; i < ids.length; i++){
-            if (ids[i].equals(user_input)){
+            if (ids[i].equals("TYC 5331-1752-1")){
                 System.out.println(ids[(i)] + "'s name is " + names[(i)]);
                 id_found = true;
             }
