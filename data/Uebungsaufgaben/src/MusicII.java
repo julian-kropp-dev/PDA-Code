@@ -24,7 +24,7 @@ public class MusicII {
             counter += 1;
             costs += 0.15;
         }
-        System.out.println("Kosten = "+ round(costs,2) + " EURO");
+        System.out.println("Kosten = "+ costs+ " EURO");
     }
 
 }

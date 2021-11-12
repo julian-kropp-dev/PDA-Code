@@ -4,7 +4,7 @@ public class ShowNumbers {
         int i = 0;
         String colon = ", ";
         for (int j: data){
-            if (i > (data.length - 2)) colon = "";
+            if (!(i < data.length - 1)) colon = "";
             System.out.print(data[(i)] + colon );
             i ++;
         }
