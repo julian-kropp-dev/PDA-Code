@@ -18,10 +18,10 @@ public class StarsDatabase {
             }
         }
         // error message if there is no matching star for the id
-       if (!id_found) System.out.println("Sadly, the star you're looking for was not found. Mayby your key is invalid.");
+        if (!id_found) System.out.println("Sadly, the star you're looking for was not found. Mayby your key is invalid.");
 
-       System.out.println("------- \nThe following stars have a distance shorter than 10 years:");
-       // for-loop is looking for stars with a distance shorter than 10 years
+        System.out.println("------- \nThe following stars have a distance shorter than 10 years:");
+        // for-loop is looking for stars with a distance shorter than 10 years
         for (int j = 0; j < ids.length; j++){
             if (distance[j] < 10) {
                 System.out.println(names[j] + "'s distance: " + distance[j]);
