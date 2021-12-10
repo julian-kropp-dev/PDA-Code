@@ -1,3 +1,5 @@
+package uebung2;
+
 public class StarDistance {
     public static void main(String[] args) {
         long d1 = 8000000000000000000L;

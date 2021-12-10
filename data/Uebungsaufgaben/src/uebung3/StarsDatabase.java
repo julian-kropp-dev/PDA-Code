@@ -1,3 +1,5 @@
+package uebung3;
+
 public class StarsDatabase {
     public static void main(String[] args) {
 

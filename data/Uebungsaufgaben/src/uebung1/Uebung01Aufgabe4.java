@@ -1,3 +1,5 @@
+package uebung1;
+
 /*
 Schreiben Sie ein Java-Programm, das zunächst die Zahl 7 einer Variablen zuweist. Anschließend soll das Programm
 so lange den Wert 6 zu dieser Variablen hinzufügen, bis das Ergebnis größer wird als 30. Dabei soll sich das Programm merken,

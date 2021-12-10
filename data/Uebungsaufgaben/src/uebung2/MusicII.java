@@ -1,3 +1,5 @@
+package uebung2;
+
 import java.util.Scanner;
 public class MusicII {
     private static double round(double value, int decimalPoints) {

@@ -1,3 +1,5 @@
+package uebung2;
+
 import tools.IO;        // für Benutzereingaben
 public class Music {
     static int kostenInCent(int inDownloads) {

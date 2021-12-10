@@ -1,3 +1,5 @@
+package uebung2;
+
 public class ValueCombination {
     public static void main(String[] args) {
         int i = 5;

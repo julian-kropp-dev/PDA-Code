@@ -1,3 +1,5 @@
+package uebung1;
+
 public class Power { // corrected "Class" to "class"
     public static void main(String[] args){
         int a = 2; // renamed all integer to int and added semicolons (;)
