@@ -1,8 +1,6 @@
 package uebung7;
 
-/**
- @author <Julian Kropp>
- */
+
 public class TestClassAccount {
     public static void main(String[] args) {
         Account eins = new Account("Donald Duck", 0.0);
