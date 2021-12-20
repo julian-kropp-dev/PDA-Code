@@ -1,5 +1,4 @@
-package uebung9;
-import static org.junit.jupiter.api.Assertions.*;
+package uebung9.car;
 import org.junit.jupiter.api.Test;
 
 public class CarTestClass {
