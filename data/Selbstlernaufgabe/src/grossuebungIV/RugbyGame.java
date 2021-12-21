@@ -3,7 +3,7 @@ public class RugbyGame {
 	public static void main(String[] args) {
 		RugbyGame game = new RugbyGame();
 		//TODO implement course of the game here
-		Player a1 = Team.getPlayer(0);
+
 
 
 	}
