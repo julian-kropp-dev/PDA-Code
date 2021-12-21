@@ -5,13 +5,10 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Solution {
-    private int[] array;
-    private int target;
-
     public Solution() {}
 
     public List<Integer> getRange(int[] array, int target) {
-        List<Integer> solution = new ArrayList<Integer>();
+        List<Integer> solution = new ArrayList<>();
 
         for (int i = 0; i < array.length; i++) {
             if (array[i] == target) {
@@ -20,7 +17,7 @@ public class Solution {
         }
         int first = solution.get(0);
         int last = solution.get(solution.size() - 1);
-        List<Integer> finalsolution = new ArrayList<Integer>();
+        List<Integer> finalsolution = new ArrayList<>();
         finalsolution.add(first);
         finalsolution.add(last);
         return finalsolution;
