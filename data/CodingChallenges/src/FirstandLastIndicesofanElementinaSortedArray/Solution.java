@@ -12,13 +12,16 @@ public class Solution {
         for (int i = 0; i < array.length; i++) {
             if (array[i] == target) {
                solution.add(i);
+
             }
+
         }
         int first = solution.get(0);
         int last = solution.get(solution.size() - 1);
         List<Integer> finalsolution = new ArrayList<>();
         finalsolution.add(first);
         finalsolution.add(last);
+
         return finalsolution;
 
     }
