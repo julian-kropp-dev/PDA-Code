@@ -16,6 +16,7 @@ public class Solution {
             }
 
         }
+        
         int first = solution.get(0);
         int last = solution.get(solution.size() - 1);
         List<Integer> finalsolution = new ArrayList<>();
