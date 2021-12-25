@@ -1,6 +1,5 @@
 package uebung9.lists;
 
-import java.awt.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 
