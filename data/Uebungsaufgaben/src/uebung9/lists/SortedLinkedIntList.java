@@ -1,10 +1,25 @@
 package uebung9.lists;
 
+import java.awt.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class SortedLinkedIntList {
     LinkedIntListElement start;
 
-    public SortedLinkedIntList () {
-        start = new LinkedIntListElement(0);
+    public static void main(String[] args) {
+        SortedLinkedIntList newlist = new SortedLinkedIntList(1); //Start-Element
+        newlist.add(1); //Add
+        newlist.add(2);
+        newlist.add(4);
+        newlist.add(4);
+        newlist.add(10);
+        System.out.println(Arrays.toString(newlist.toArray(newlist)));
+
+    }
+
+    public SortedLinkedIntList (int value) {
+        start = new LinkedIntListElement(value);
     }
 
     public int get(int index) {
@@ -52,6 +67,37 @@ public class SortedLinkedIntList {
             current.setNext(element);
         }
     }
+
+    private LinkedIntListElement iterCurrent;
+
+    public int getNext() {
+        int result = iterCurrent.getValue();
+        iterCurrent = iterCurrent.getNext();
+        return result;
+    }
+
+    public void reset() {
+        iterCurrent = start;
+    }
+
+    public boolean hasNext() {
+        return iterCurrent != null;
+    }
+
+    public int[] toArray(SortedLinkedIntList newlist) {
+        newlist.reset();
+        ArrayList<Integer> list = new ArrayList<>();
+        while (newlist.hasNext()) {
+            list.add(newlist.getNext());
+        }
+        return list.stream().mapToInt(Integer::intValue).toArray();
+
+    }
+
+
+
+
+
 
 
 }
