@@ -8,15 +8,13 @@ public class Car {
     private int sitze;
     private int tueren;
 
-    public Car(double hoechstgeschwindigkeit){
-        this.hoechstgeschwindigkeit = hoechstgeschwindigkeit;
+    public Car(){
 
     }
 
-
     //getter
 
-    public Reifen[] getReifen(int index) {
+    public Reifen[] getReifen() {
         return reifen;
     }
 
@@ -70,10 +68,7 @@ public class Car {
     //features
 
     public boolean isFasterThanOtherCar(double hoechstgeschwindigkeitdesAnderen) {
-        if (hoechstgeschwindigkeitdesAnderen < getHoechstgeschwindigkeit()){
-            return true;
-        }
-        return false;
+        return hoechstgeschwindigkeitdesAnderen < getHoechstgeschwindigkeit();
     }
 
     public boolean erfolgreichReifenErsetzt(int index, Reifen neu){
