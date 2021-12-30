@@ -27,8 +27,9 @@ public class SortedLinkedIntListTest {
         newlist.add(8);
         newlist.add(90);
         newlist.add(-2);
+        newlist.add(10);
 
-        assertArrayEquals(new int[] {-2, 3, 4, 8, 90}, newlist.toArray());
+        assertArrayEquals(new int[] {-2, 3, 4, 8, 10, 90}, newlist.toArray());
 
     }
 }
