@@ -1,13 +1,13 @@
 package uebung9.lists;
 
 public class LinkedIntListElement {
-    private int value;
+    private final int value;
     private LinkedIntListElement next;
 
     //constructor
     public  LinkedIntListElement(int value) {
         this.value = value;
-        next = null;
+        this.next = null;
     }
 
     //getter
@@ -24,8 +24,10 @@ public class LinkedIntListElement {
         this.next = next;
     }
 
-    public void setValue(int value) {
-        this.value = value;
+
+    //hasNext
+    public boolean hasNext() {
+        return (next != null);
     }
 
 }

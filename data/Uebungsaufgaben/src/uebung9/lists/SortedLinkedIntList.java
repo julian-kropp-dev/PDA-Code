@@ -1,102 +1,76 @@
 package uebung9.lists;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
 public class SortedLinkedIntList {
-    LinkedIntListElement start;
+    private LinkedIntListElement start;
+    private int counter; //Aktuelle Länge der Liste
 
-    public static void main(String[] args) {
-        SortedLinkedIntList newlist = new SortedLinkedIntList(1); //Start-Element
-        newlist.add(1); //Add
-        newlist.add(2);
-        newlist.add(4);
-        newlist.add(4);
-        newlist.add(10);
-        System.out.println(Arrays.toString(newlist.toArray(newlist)));
+    private LinkedIntListElement iterNext; //steht auf nächstem Element im Laufe einer Iteration
 
+    public SortedLinkedIntList () {
+        start = null;
+        iterNext = null;
+        counter = 0;
     }
 
-    public SortedLinkedIntList (int value) {
-        start = new LinkedIntListElement(value);
-    }
-
-    public int get(int index) {
-        if (start == null) return 0;
-
-        //start at the head of the list
+    public LinkedIntListElement findPrev(int value) {
         LinkedIntListElement current = start;
-
-        //counter for finding the correct index position
-        int pos = 0;
-
-        //repeat until the position in the list is the desired index
-        while (pos < index) {
-
-            // list does not have enough elements
-            if (current.getNext() == null) {
-                return 0;
-            }
-
-            //move to the next element in the list
-            current = current.getNext();
-            pos ++;
+        if (current == null || value < current.getValue()) {
+            return null;
         }
-        return current.getValue();
 
+        while (current.hasNext()) {
+            if (value < current.getNext().getValue()) {
+                return current;
+            }
+            current = current.getNext();
+
+        }
+        return current;
     }
+
 
     public void add(int value) {
         LinkedIntListElement elem = new LinkedIntListElement(value);
-        if (start == null) {
+        counter ++; //Neue Elemente werden gezählt
+
+        if (start == null) { //Wenn Liste noch leer
             start = elem;
-        }
-        else{
-            LinkedIntListElement current = start;
-            int pos = 0;
-            while (pos < value - 1) {
-                if (current.getNext() == null) {
-                    break;
-                }
-                current = current.getNext();
-                pos ++;
+
+        } else {
+            LinkedIntListElement prev = findPrev(value);
+            if (prev == null) {
+                elem.setNext(start);
+                start = elem;
+            } else {
+                elem.setNext(prev.getNext());
+                prev.setNext(elem);
             }
-            LinkedIntListElement element = new LinkedIntListElement(value);
-            element.setNext(current.getNext());
-            current.setNext(element);
         }
     }
 
-    private LinkedIntListElement iterCurrent;
-
-    public int getNext() {
-        int result = iterCurrent.getValue();
-        iterCurrent = iterCurrent.getNext();
+    public Integer getNext() {
+        int result = iterNext.getValue();
+        iterNext = iterNext.getNext();
         return result;
     }
 
     public void reset() {
-        iterCurrent = start;
+        iterNext = start;
     }
 
     public boolean hasNext() {
-        return iterCurrent != null;
+        return (iterNext != null);
     }
 
-    public int[] toArray(SortedLinkedIntList newlist) {
-        newlist.reset();
-        ArrayList<Integer> list = new ArrayList<>();
-        while (newlist.hasNext()) {
-            list.add(newlist.getNext());
+    public int[] toArray() {
+        LinkedIntListElement current = start; //lokale Laufvariable für die Liste
+        int[] result = new int[counter];
+        for (int i = 0; i < counter; i++) {
+            result[i] = current.getValue();
+            current = current.getNext();
         }
-        return list.stream().mapToInt(Integer::intValue).toArray();
+        return result;
 
     }
-
-
-
-
-
-
 
 }
