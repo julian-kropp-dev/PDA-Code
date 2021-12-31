@@ -1,3 +1,5 @@
+// Alternative Methode zum lösen dieser Aufgaben durch Sortierung neu eingefügter Elemente mittels Sortieralgorithmus. 
+
 package uebung9.lists;
 
 
