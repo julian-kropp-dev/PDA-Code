@@ -6,6 +6,7 @@ public class SortedLinkedIntList {
 
     private LinkedIntListElement iterNext; //steht auf nächstem Element im Laufe einer Iteration
 
+    //Constructor
     public SortedLinkedIntList () {
         start = null;
         iterNext = null;

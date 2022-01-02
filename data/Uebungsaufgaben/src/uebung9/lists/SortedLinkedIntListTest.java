@@ -16,12 +16,12 @@ public class SortedLinkedIntListTest {
         assertEquals(4, newlist.getNext());
         assertFalse(newlist.hasNext());
         //
-        newlist.add(3);
+        newlist.add(5);
         newlist.reset();
         assertTrue(newlist.hasNext());
-        assertEquals(3, newlist.getNext());
-        assertTrue(newlist.hasNext());
         assertEquals(4, newlist.getNext());
+        assertTrue(newlist.hasNext());
+        assertEquals(5, newlist.getNext());
         assertFalse(newlist.hasNext());
         //
         newlist.add(8);
@@ -29,7 +29,7 @@ public class SortedLinkedIntListTest {
         newlist.add(-2);
         newlist.add(10);
 
-        assertArrayEquals(new int[] {-2, 3, 4, 8, 10, 90}, newlist.toArray());
+        assertArrayEquals(new int[] {-2, 4, 5, 8, 10, 90}, newlist.toArray());
 
     }
 }
