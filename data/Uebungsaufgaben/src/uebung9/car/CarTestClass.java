@@ -65,4 +65,14 @@ public class CarTestClass {
         assertTrue(car.isFasterThanOtherCar(cartwo.getHoechstgeschwindigkeit()));
     }
 
+    @Test
+    void testReifenwechsel() {
+        Reifen[] arr = { new Reifen(10, false), new Reifen(5, true) };
+        Reifen neu = new Reifen(3, false);
+        car.setReifen(arr);
+        assertEquals(arr[1], car.getReifen()[1]);
+        car.erfolgreichReifenErsetzt(1, neu);
+        assertEquals(neu, car.getReifen()[1]);
+    }
+
 }
