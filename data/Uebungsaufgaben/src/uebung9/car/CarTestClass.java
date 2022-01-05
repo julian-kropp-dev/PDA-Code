@@ -61,8 +61,8 @@ public class CarTestClass {
         car.setHoechstgeschwindigkeit(223.0);
         Car cartwo = new Car();
         cartwo.setHoechstgeschwindigkeit(123.4);
-        car.isFasterThanOtherCar(cartwo.getHoechstgeschwindigkeit());
-        assertTrue(car.isFasterThanOtherCar(cartwo.getHoechstgeschwindigkeit()));
+        car.isFasterThanOtherCar(cartwo);
+        assertTrue(car.isFasterThanOtherCar(cartwo));
     }
 
     @Test

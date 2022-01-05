@@ -67,8 +67,8 @@ public class Car {
 
     //features
 
-    public boolean isFasterThanOtherCar(double hoechstgeschwindigkeitdesAnderen) {
-        return hoechstgeschwindigkeitdesAnderen < getHoechstgeschwindigkeit();
+    public boolean isFasterThanOtherCar(Car otherCar) {
+        return otherCar.getHoechstgeschwindigkeit() < getHoechstgeschwindigkeit();
     }
 
     public boolean erfolgreichReifenErsetzt(int index, Reifen neu){
