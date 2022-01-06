@@ -8,9 +8,8 @@ public class Car {
     private int sitze;
     private int tueren;
 
-    public Car(){
-
-    }
+    //empty constructor
+    public Car(){}
 
     //getter
 

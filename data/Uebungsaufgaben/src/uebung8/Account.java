@@ -4,22 +4,28 @@ public class Account {
 	private String owner;
 	private int balance;
 
+	//default-constructor
+	public Account() {}
+
+	//constructor
 	public Account(String owner) {
 		setOwner(owner);
 	}
 
+	//getter
 	public String getOwner() {
 		return owner;
 	}
-
-	public void setOwner(String owner) {
-		this.owner = owner;
-	}
-
 	public int getBalance() {
 		return balance;
 	}
 
+	//setter
+	public void setOwner(String owner) {
+		this.owner = owner;
+	}
+
+	//features
 	public void deposit(int amount) {
 		if (amount >= 0){
 			balance = getBalance() + amount;

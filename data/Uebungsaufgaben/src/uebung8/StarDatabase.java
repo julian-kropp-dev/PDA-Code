@@ -6,7 +6,6 @@ public class StarDatabase {
     //Konstruktur
     public StarDatabase() {
 
-
     }
 
     //Methoden
