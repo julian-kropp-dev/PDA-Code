@@ -1,38 +1,68 @@
 package uebung8;
 import static org.junit.jupiter.api.Assertions.*;
+
 import org.junit.jupiter.api.Test;
 
 /**
- @author <Julian Kropp (Die_drei_von_Nebenan)>
+ @author Die_drei_von_Nebenan>
  */
 
 public class AccountTest {
+    Account accountDonald = new Account("Donald Duck");
+    Account accountScrooge = new Account("Dagobert Duck");
+
     @Test
-    /*
-    possible testcases:
-        - not enough money when transfering
-        - not enough money when withdrawing money
-        - try to deposit negative money
-        - amount has more than two decimal places --> not possible when I use cents only, so I changed double to int
-        - input isn't a double
-     */
-    public static void main(String[] args) {
-        Account accountDonald = new Account("Donald Duck");
-        Account accountScrooge = new Account("Dagobert Duck");
+    void getOwnerTest() {
+        assertEquals("Donald Duck", accountDonald.getOwner());
+        assertEquals("Dagobert Duck", accountScrooge.getOwner());
+    }
 
-        accountDonald.deposit(10000);
-        accountDonald.transfer(5000,accountScrooge);
-        assertEquals(5000, accountScrooge.getBalance());
-        accountScrooge.transfer(6000, accountDonald);
-        assertEquals(5000, accountScrooge.getBalance());
-        accountDonald.deposit(-1000);
-        assertEquals(5000,accountDonald.getBalance());
-        accountDonald.withdraw(-1000);
-        assertEquals(5000,accountDonald.getBalance());
+    @Test
+    void depositTest() {
+        accountDonald.deposit(10000); //10 Euro
+        accountScrooge.deposit(50000); //50 Euro
 
+        assertEquals(10000, accountDonald.getBalance());
+        assertEquals(50000, accountScrooge.getBalance());
+    }
 
-        System.out.println(accountDonald.getBalance());
-        System.out.println(accountScrooge.getBalance());
+    @Test
+    void transferTest() {
+        accountDonald.deposit(10000); //10 Euro
+        accountScrooge.deposit(50000); //50 Euro
+
+        assertFalse(accountDonald.transfer(200000, accountDonald));
+        assertTrue(accountScrooge.transfer(25000, accountDonald));
+        assertFalse(accountDonald.transfer(-1, accountScrooge));
+        assertEquals(35000, accountDonald.getBalance());
+        assertEquals(25000, accountScrooge.getBalance());
 
     }
+
+    @Test
+    void withdrawTest() {
+        accountDonald.deposit(10000); //10 Euro
+        accountScrooge.deposit(50000); //50 Euro
+
+        assertTrue(accountDonald.withdraw(1000));
+        assertFalse(accountScrooge.withdraw(234589999));
+        assertFalse(accountScrooge.withdraw(-1));
+        assertEquals(9000, accountDonald.getBalance());
+
+    }
+
+
+    @Test
+    void getBalanceTest() {
+        accountDonald.deposit(10000); //10 Euro
+        accountScrooge.deposit(50000); //50 Euro
+
+        assertEquals(10000, accountDonald.getBalance());
+        assertEquals(50000, accountScrooge.getBalance());
+
+    }
+
+
+
+
 }

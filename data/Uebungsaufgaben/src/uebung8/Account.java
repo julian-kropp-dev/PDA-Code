@@ -40,13 +40,17 @@ public class Account {
 	}
 
 	public boolean transfer(int amount, Account other) {
-		if (getBalance() >= amount) {
-			balance -= amount;
-			other.balance += amount;
-			return true;
-		} else {
-			return false;
+		if (amount >= 0){
+			if (getBalance() >= amount) {
+				balance -= amount;
+				other.balance += amount;
+				return true;
+			} else {
+				return false;
+			}
 		}
+		return false;
+
 	}
 	
 }
