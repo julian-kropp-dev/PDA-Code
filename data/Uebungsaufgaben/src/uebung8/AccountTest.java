@@ -1,6 +1,7 @@
 package uebung8;
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 /**
@@ -60,7 +61,7 @@ public class AccountTest {
         assertEquals(10000, accountDonald.getBalance());
         assertEquals(50000, accountScrooge.getBalance());
 
-    }
+    } 
 
 
 

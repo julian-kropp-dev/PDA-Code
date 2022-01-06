@@ -46,16 +46,16 @@ public class Account {
 	}
 
 	public boolean transfer(int amount, Account other) { //transfer money from one acc to another one (if it's possible)
-		if (amount >= 0){
-			if (getBalance() >= amount) {
+		if (amount >= 0){ //only positive transfer amounts possible
+			if (getBalance() >= amount) { //enough money?
 				balance -= amount;
-				other.balance += amount;
-				return true;
+				other.balance += amount; //transfer
+				return true; //worked✅
 			} else {
-				return false;
+				return false; //not enough money❌
 			}
 		}
-		return false;
+		return false; //something went wrong❌
 
 	}
 	
