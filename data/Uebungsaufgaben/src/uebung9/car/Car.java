@@ -67,6 +67,10 @@ public class Car {
     //features
 
     public boolean isFasterThanOtherCar(Car otherCar) {
+        if (otherCar == null) {
+            System.out.println("Error: No otherCar selected!");
+        }
+        assert otherCar != null;
         return otherCar.getHoechstgeschwindigkeit() < getHoechstgeschwindigkeit();
     }
 
