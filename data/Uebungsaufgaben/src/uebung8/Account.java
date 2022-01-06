@@ -28,12 +28,12 @@ public class Account {
 	//features
 	public void deposit(int amount) {
 		if (amount >= 0){
-			balance = getBalance() + amount;
+			balance = getBalance() + amount; //add money to depot
 		}
 
 	}
 
-	public boolean withdraw(int amount) {
+	public boolean withdraw(int amount) { //trys to withdraw mony from bank acc if it's possible
 		if (amount >= 0){
 			if (getBalance() >= amount) {
 				balance = getBalance() - amount;
@@ -45,7 +45,7 @@ public class Account {
 		return false;
 	}
 
-	public boolean transfer(int amount, Account other) {
+	public boolean transfer(int amount, Account other) { //transfer money from one acc to another one (if it's possible)
 		if (amount >= 0){
 			if (getBalance() >= amount) {
 				balance -= amount;
