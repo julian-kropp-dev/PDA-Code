@@ -1,5 +1,9 @@
 package uebung10.binarytree;
 
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
+
 public class IntBinTree {
     private IntNode root;
     private Integer content;
@@ -8,7 +12,8 @@ public class IntBinTree {
     public IntBinTree() {};
 
     public IntBinTree(Integer content) {
-        this.content = content;
+        root = new IntNode(content);
+        //root.setData(content);
     }
 
     public IntBinTree(IntBinTree left, Integer content, IntBinTree right) {
@@ -26,7 +31,7 @@ public class IntBinTree {
         this.root = root;
     }
 
-    //features
+    //features part A
 
     public boolean isEmpty() {
         return root == null;
@@ -53,6 +58,20 @@ public class IntBinTree {
 
     public void setRight(IntBinTree tree) {
         root.setRight(tree.root);
+    }
+
+    //features part B
+
+    public Integer[] inorder() {
+        LinkedList <Integer> integerValues = new LinkedList<Integer>(); //created LinkedList because it's easier to add values
+        if(!isEmpty()) {
+            getLeft().inorder();
+            integerValues.add(getValue());
+            getRight().inorder();
+            integerValues.add(getValue());
+        }
+
+        return integerValues.toArray(new Integer[0]); //convert LinkedList back to Array
     }
 
 
