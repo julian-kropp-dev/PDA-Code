@@ -64,6 +64,7 @@ public class CarTestClass {
         car.isFasterThanOtherCar(cartwo);
         assertTrue(car.isFasterThanOtherCar(cartwo));
     }
+    
 
     @Test
     void testReifenwechsel() {
