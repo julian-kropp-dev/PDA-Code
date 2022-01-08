@@ -63,15 +63,15 @@ public class IntBinTree {
     //features part B
 
     public Integer[] inorder() {
-        LinkedList <Integer> integerValues = new LinkedList<Integer>(); //created LinkedList because it's easier to add values
-        if(!isEmpty()) {
+       Integer[] integerValues = new Integer[]{};
+       int counter = 0;
+       if(!isEmpty()) {
             getLeft().inorder();
-            integerValues.add(getValue());
             getRight().inorder();
-            integerValues.add(getValue());
+
         }
 
-        return integerValues.toArray(new Integer[0]); //convert LinkedList back to Array
+        return integerValues;
     }
 
 
