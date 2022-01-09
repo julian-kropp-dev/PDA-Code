@@ -15,7 +15,7 @@ public class SortedLinkedIntList {
 
     public LinkedIntListElement findPrev(int value) { //Vorgänger finden, um Elemente dahinter einzufügen
         LinkedIntListElement current = start;
-        if (current == null || value < current.getValue()) { // Liste ist leer oder value ist kleiner als das Value des akt. elem
+        if (/*current == null || */ value < current.getValue()) {
             return null;
         }
 
@@ -34,11 +34,11 @@ public class SortedLinkedIntList {
         LinkedIntListElement elem = new LinkedIntListElement(value);
         counter ++; //Neue Elemente werden für den Array Converter (s. unten) gezählt
 
-        if (start == null) { //Wenn Liste noch leer
-            start = elem; //erstes elem als Start definieren
+        if (start == null) { //Wenn Liste noch leer, also start zeigt auf keine Node
+            start = elem; //erstes elem als Start definieren (start --> elem1: value = value, next = null)
 
-        } else {
-            LinkedIntListElement prev = findPrev(value);
+        } else { //Liste hat mehr als ein Element
+            LinkedIntListElement prev = findPrev(value); //neues Elem prev wird erstellt mit dem Rückgabetyp von findPrev, also entweder null (neues elem < aktuelles elem) oder Objekt current
             if (prev == null) { //Wenn das prev elem auf nichts mehr zeigt (davor einfügen)
                 elem.setNext(start); //aktuelles elem deutet auf das elem start (an dem alle anderen elems hängen)
                 start = elem;
