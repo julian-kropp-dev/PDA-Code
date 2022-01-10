@@ -1,8 +1,5 @@
 package uebung10.binarytree;
 
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
 
 public class IntBinTree {
     private IntNode root;
@@ -63,15 +60,25 @@ public class IntBinTree {
     //features part B
 
     public Integer[] inorder() {
-       Integer[] integerValues = new Integer[]{};
-       int counter = 0;
-       if(!isEmpty()) {
-            getLeft().inorder();
-            getRight().inorder();
+        if ( isEmpty() )
+            return null;
+        Integer[] leftArr = new Integer[0];
+        Integer[] rightArr = new Integer[0];
+        if ( getLeft() != null )
+            leftArr = getLeft().inorder();
 
+        if ( getRight() != null )
+            rightArr = getRight().inorder();
+        //
+        Integer[] result = new Integer[leftArr.length + 1 + rightArr.length];
+        for ( int i = 0; i < leftArr.length; i++ ) {
+            result[i] = leftArr[i];
         }
-
-        return integerValues;
+        result[leftArr.length] = getValue();
+        for ( int i = 0; i < rightArr.length; i++ ) {
+            result[leftArr.length + 1 + i ] = rightArr[i];
+        }
+        return result;
     }
 
 
