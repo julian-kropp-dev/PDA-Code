@@ -25,7 +25,9 @@ public class IntBinTreeTest {
         IntBinTree left = new IntBinTree(1);
         IntBinTree right = new IntBinTree(5);
         IntBinTree tree = new IntBinTree(left, 3, right);
+        IntBinTree zero = new IntBinTree();
         assertEquals(left.getValue(), tree.getLeft().getValue());
+        assertNull(zero.getLeft());
     }
 
     @Test
@@ -33,7 +35,9 @@ public class IntBinTreeTest {
         IntBinTree left = new IntBinTree(1);
         IntBinTree right = new IntBinTree(5);
         IntBinTree tree = new IntBinTree(left, 3, right);
+        IntBinTree zero = new IntBinTree();
         assertEquals(right.getValue(), tree.getRight().getValue());
+        assertNull(zero.getLeft());
     }
 
     @Test
@@ -47,13 +51,11 @@ public class IntBinTreeTest {
         IntBinTree root = new IntBinTree(child3, 2, child4); //full BST
 
         /*
-
                 2
               /   \
             3       4
            / \     / \
           5   6   7   8
-
          */
 
         assertEquals(2, root.getValue());
@@ -66,6 +68,6 @@ public class IntBinTreeTest {
         assertFalse(root.isEmpty());
 
 
-
     }
+
 }
