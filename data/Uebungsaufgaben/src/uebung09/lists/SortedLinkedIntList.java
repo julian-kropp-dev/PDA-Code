@@ -15,7 +15,7 @@ public class SortedLinkedIntList {
 
     public LinkedIntListElement findPrev(int value) { //Vorgänger finden, um Elemente dahinter einzufügen
         LinkedIntListElement current = start;
-        if (/*current == null || */ value < current.getValue()) {
+        if (value < current.getValue()) {
             return null;
         }
 
@@ -39,9 +39,9 @@ public class SortedLinkedIntList {
 
         } else { //Liste hat mehr als ein Element
             LinkedIntListElement prev = findPrev(value); //neues Elem prev wird erstellt mit dem Rückgabetyp von findPrev, also entweder null (neues elem < aktuelles elem) oder Objekt current
-            if (prev == null) { //Wenn das prev elem auf nichts mehr zeigt (davor einfügen)
-                elem.setNext(start); //aktuelles elem deutet auf das elem start (an dem alle anderen elems hängen)
-                start = elem;
+            if (prev == null) {
+                elem.setNext(start);
+                start = elem; //neues Start Element festsetzen
             } else {
                 elem.setNext(prev.getNext());
                 prev.setNext(elem); //Nachfolger des vorherigen Elements auf das aktuelle elem verweisen
