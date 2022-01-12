@@ -67,7 +67,19 @@ public class IntBinTreeTest {
         assertEquals(8, root.getRight().getRight().getValue());
         assertFalse(root.isEmpty());
 
+    }
 
+    @Test
+    void inOrderTest2() {
+        IntBinTree root = new IntBinTree(5);
+        IntBinTree leftNode = new IntBinTree(4);
+        IntBinTree rightNode = new IntBinTree(6);
+        root.setLeft(leftNode);
+        root.setRight(rightNode);
+
+
+        IntBinTree tree = new IntBinTree(root.getLeft(), root.getValue(), root.getRight());
+        assertArrayEquals(new Integer[] {4, 5, 6}, tree.inorder());
     }
 
 }

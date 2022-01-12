@@ -1,16 +1,16 @@
 package uebung10.binarytree;
 
 
+import java.util.ArrayList;
+
 public class IntBinTree {
     private IntNode root;
-    private Integer content;
 
     //constructors
     public IntBinTree() {};
 
     public IntBinTree(Integer content) {
-        root = new IntNode(content);
-        //root.setData(content);
+        this.root = new IntNode(content);
     }
 
     public IntBinTree(IntBinTree left, Integer content, IntBinTree right) {
@@ -49,9 +49,7 @@ public class IntBinTree {
         return new IntBinTree(root.getRight());
     }
 
-    public void setLeft(IntBinTree tree) {
-        root.setLeft(tree.root);
-    }
+    public void setLeft(IntBinTree tree) {root.setLeft(tree.root);}
 
     public void setRight(IntBinTree tree) {
         root.setRight(tree.root);
@@ -66,7 +64,7 @@ public class IntBinTree {
         Integer[] rightArr = new Integer[0];
         if ( getLeft() != null )
             leftArr = getLeft().inorder();
-
+//		System.out.println(getValue());
         if ( getRight() != null )
             rightArr = getRight().inorder();
         //
@@ -80,6 +78,13 @@ public class IntBinTree {
         }
         return result;
     }
+
+
+    //features part C
+
+    //features part D
+
+    //features part E
 
 
 
