@@ -32,6 +32,7 @@ public class SortedLinkedIntListTest {
 
     @Test
     void testCase4() {
+        newlist.reset();
         newlist.add(8);
         newlist.add(90);
         newlist.add(-2);

@@ -2,8 +2,8 @@ package uebung10.binarytree;
 
 public class IntNode {
     private Integer data;
-    private IntNode left;
-    private IntNode right;
+    private IntBinTree left;
+    private IntBinTree right;
 
     //constructor
     public IntNode(Integer data) {
@@ -17,11 +17,11 @@ public class IntNode {
         return data;
     }
 
-    public IntNode getLeft() {
+    public IntBinTree getLeft() {
         return left;
     }
 
-    public IntNode getRight() {
+    public IntBinTree getRight() {
         return right;
     }
 
@@ -31,11 +31,11 @@ public class IntNode {
         this.data = data;
     }
 
-    public void setLeft(IntNode left) {
+    public void setLeft(IntBinTree left) {
         this.left = left;
     }
 
-    public void setRight(IntNode right) {
+    public void setRight(IntBinTree right) {
         this.right = right;
     }
 }

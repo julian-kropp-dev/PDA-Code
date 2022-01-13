@@ -1,0 +1,13 @@
+Aufgabe 2
+
+a) Der Baum laesst sich als Binaerbaum darstellen, nach der Methode SiblingTree.
+	Damit das Verhalten des Ursprungsbaumes simuliert werden kann, 
+	ist die Konsequenz, dass der linke und rechte Nachfolger im Binaerbaum 
+	unterschiedlich behandelt werden muessen.
+	Ein Schritt nach rechts haengt dem bisher gefundenen Wort ein weiteres Zeichen an.
+	Ein Schritt nach links ersetzt das letzte Zeichen des bisher gefundenen Wortes durch ein anderes Zeichen.
+	
+b) In der Zeichnung: 
+	"great": An "gre" wird ein "a"-Knoten angehaengt und an diesen ein "t"-Knoten mit dem Wert 3.
+	"blue": "blue" ist schon vorhanden und erhaelt nur den Wert 6.
+	

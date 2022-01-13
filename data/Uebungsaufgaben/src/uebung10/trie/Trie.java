@@ -1,8 +1,15 @@
 package uebung10.trie;
-
 public class Trie {
+	
+	// Attribute
 
     private TrieNode root;
+    
+    // Konstruktor
+    
+    public Trie() {
+		root = new TrieNode();
+    }
 
     /**
      * Adds a new value with the given key to the trie, creating new TrieNodes as required.
@@ -11,8 +18,15 @@ public class Trie {
      * @return True if the value could be added to the trie, false otherwise
      */
     public boolean addValue(char[] key, int value) {
-		//TODO implement this
-        return false;
+    	TrieNode currNode = root;
+    	for ( int idx = 0; idx < key.length; idx++ ) {	    		
+    		currNode = currNode.addChild( key[idx], -1 );
+	    	if ( currNode == null ) {						// nicht genug Platz
+				return false;
+			}
+    	}
+    	currNode.setValue(value); 				// setzt korrekten Wert
+    	return true;
 	}
 
     /**
@@ -20,8 +34,15 @@ public class Trie {
      * @param key The given key
      * @return The associated value, or -1 if the key is not represented in this trie
      */
+    
     public int findValue(char[] key) {
-		return 0;
+    	TrieNode currNode = root;
+    	for ( int idx = 0; idx < key.length; idx++ ) {	    		
+    		currNode = currNode.find(key[idx]);
+	    	if ( currNode == null )
+	    		return -1;
+    	}
+    	return currNode.getValue();
 	}
 
 }

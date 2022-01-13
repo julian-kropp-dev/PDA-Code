@@ -13,14 +13,14 @@ public class SortedLinkedIntList {
         counter = 0;
     }
 
-    public LinkedIntListElement findPrev(int value) { //Vorgänger finden, um Elemente dahinter einzufügen
+    public LinkedIntListElement findPrev(int value) {
         LinkedIntListElement current = start;
         if (value < current.getValue()) {
             return null;
         }
 
-        while (current.hasNext()) { //solange es weitere Elemente in der Liste gibt
-            if (value < current.getNext().getValue()) { //Wenn unser neues Element kleiner ist als der Wert des Vorgängers,
+        while (current.hasNext()) {
+            if (value < current.getNext().getValue()) { //Wenn unser neues Element kleiner ist als der Wert des Nachfolgers,
                 return current; //dann returnen wir das aktuell ausgewählte elem
             }
             current = current.getNext(); //nächstes elem wird als aktuelles gesetzt
