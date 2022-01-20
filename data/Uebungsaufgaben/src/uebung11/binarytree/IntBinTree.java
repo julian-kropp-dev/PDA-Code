@@ -1,4 +1,4 @@
-package uebung10.binarytree;
+package uebung11.binarytree;
 
 public class IntBinTree {
     private final IntNode root;

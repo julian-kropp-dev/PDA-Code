@@ -9,11 +9,11 @@ public class HeapSort {
     }
     public static int[] sort(int[] array){
         for (int i = array.length / 2; i >= 0; i--){
-            siftDown(array, i, array.length);
+            //siftDown(array, i, array.length);
         }
         for (int i = array.length - 1; i >= 1; i--) {
-            swap(array, 0, i);
-            siftDown(array, 0, i-1);
+            //swap(array, 0, i);
+            //siftDown(array, 0, i-1);
         }
         return array;
     }
