@@ -64,15 +64,15 @@ public class IntBinTree {
         if ( getRight() != null )
             rightArr = getRight().inorder();
         //
-        Integer[] result = new Integer[leftArr.length + 1 + rightArr.length];
+        Integer[] result = new Integer[leftArr.length + 1 + rightArr.length]; //+1 für die root
         for ( int i = 0; i < leftArr.length; i++ ) {
             result[i] = leftArr[i];
         }
-        result[leftArr.length] = getValue();
+        result[leftArr.length] = getValue(); //root an Stelle hinter dem linken Teilbaum
         for ( int i = 0; i < rightArr.length; i++ ) {
             result[leftArr.length + 1 + i ] = rightArr[i];
         }
-        return result;
+        return result; //linkerTeilbaum + root + rechterTeilbaum
     }
 
 
@@ -96,8 +96,10 @@ public class IntBinTree {
 
 
     public static IntBinTree createTree(Integer[] values) {
-        if ( values.length == 0 )
+        if ( values.length == 0 ) {
             return null;
+        }
+
         IntBinTree res = new IntBinTree(values[0]);
         int cursor = 1;
         while ( cursor < values.length ) {
