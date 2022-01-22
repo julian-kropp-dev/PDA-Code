@@ -91,7 +91,7 @@ class HashTableOpen {
         }
 
         if (counter < quadraticProbing.length) { //nur Objekte hinzufügen, wenn Liste noch Platz hat
-            if (quadraticProbing[quadraticProbingFunc(data.getKey())] == null) {
+            if (quadraticProbing[quadraticProbingFunc(data.getKey())] == null) { //wenn aktueller Platz nicht belegt ist
                 quadraticProbing[quadraticProbingFunc(data.getKey())] = data;
             } else {
                 versuch++;
@@ -170,8 +170,8 @@ class HashTest {
         assertEquals(erwartetesArray[2], table2.get(2));
         assertEquals(erwartetesArray[3], null);
         assertEquals(erwartetesArray[4], table2.get(53));
-        assertEquals(erwartetesArray[5], table2.get(12));
-        assertEquals(erwartetesArray[6], table2.get(5));
+        assertEquals(erwartetesArray[5], table2.get(12)); //Falsch
+        assertEquals(erwartetesArray[6], table2.get(5)); //Falsch
 
     }
 
