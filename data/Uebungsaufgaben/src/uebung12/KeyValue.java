@@ -70,13 +70,15 @@ class HashTableOpen {
     private int versuch = 0;
     private KeyValue[] quadraticProbing = new KeyValue[listSize];
 
+    public void reset() {versuch = 0;}
+
     public int hashfunction(int data) {
         return ((int) Math.floorMod(data, listSize));
     }
 
     public int quadraticProbingFunc(int data) {
         double funcS = Math.pow(Math.ceil(versuch / 2.0), 2) * Math.pow((-1), versuch);
-        int mod = (int) Math.floorMod((int) (hashfunction(data) - funcS), listSize);
+        int mod = Math.floorMod((int) (hashfunction(data) - funcS), listSize);
         return mod;
     }
 
@@ -102,7 +104,7 @@ class HashTableOpen {
     }
 
     public KeyValue get(int key) {
-        return quadraticProbing[key];
+        return quadraticProbing[quadraticProbingFunc(key)];
     }
 
 
@@ -147,6 +149,7 @@ class HashTest {
     void testAddQP() {
 
 
+
     }
 
     @Test
@@ -161,16 +164,14 @@ class HashTest {
 
 
 
-        assertEquals(erwartetesArray[0], object6);
-        assertEquals(erwartetesArray[1], object5);
-        assertEquals(erwartetesArray[2], object4);
+
+        assertEquals(erwartetesArray[0], table2.get(19));
+        assertEquals(erwartetesArray[1], table2.get(15));
+        assertEquals(erwartetesArray[2], table2.get(2));
         assertEquals(erwartetesArray[3], null);
-        assertEquals(erwartetesArray[4], object3);
-        assertEquals(erwartetesArray[5], object1);
-        assertEquals(erwartetesArray[6], object2);
-
-
-
+        assertEquals(erwartetesArray[4], table2.get(53));
+        assertEquals(erwartetesArray[5], table2.get(12));
+        assertEquals(erwartetesArray[6], table2.get(5));
 
     }
 
