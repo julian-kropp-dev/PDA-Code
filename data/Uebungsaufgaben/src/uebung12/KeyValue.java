@@ -51,6 +51,8 @@ class HashTableOverflow {
             return true;
         } else
 
+            //hier fehlen die Überlauflisten. Keine Ahnung, wie ich die implementiere
+
         return false;
     }
 
@@ -68,14 +70,13 @@ class HashTableOverflow {
 class HashTableOpen {
     private final int listSize = 7;
     private int versuch = 0;
-    private KeyValue[] quadraticProbing = new KeyValue[listSize];
+    private final KeyValue[] quadraticProbing = new KeyValue[listSize];
 
     public void reset() {versuch = 0;}
 
     public int hashfunction(int data) {
-        return ((int) Math.floorMod(data, listSize));
+        return ((int) Math.floorMod(data, listSize)); //Hashfunktion (Wert % Länge der Liste)
     }
-
     public int quadraticProbingFunc(int data) {
         double funcS = Math.pow(Math.ceil(versuch / 2.0), 2) * Math.pow((-1), versuch);
         int mod = Math.floorMod((int) (hashfunction(data) - funcS), listSize);
