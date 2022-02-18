@@ -2,13 +2,13 @@ package uebung11.binarytree;
 
 public class IntNode {
     private Integer data;
-    private IntBinTree left; //Alternativ auch mit IntNode left & right umsetzbar. Dann aber in IntBinTree.java aufpassen
+    private IntBinTree left;
     private IntBinTree right;
 
     //constructor
     public IntNode(Integer data) {
         this.data = data;
-        left = null; //Knoten kann auch Blatt sein (keine Kinder)
+        left = null;
         right = null;
     }
 

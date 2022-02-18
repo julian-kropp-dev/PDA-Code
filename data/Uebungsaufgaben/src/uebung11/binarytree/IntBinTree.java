@@ -4,7 +4,7 @@ public class IntBinTree {
     private final IntNode root;
 
     //constructors
-    public IntBinTree() {root = null;} //empty constructor
+    public IntBinTree() {root = null;}
 
     public IntBinTree(Integer content) {
         this.root = new IntNode(content);
@@ -60,7 +60,7 @@ public class IntBinTree {
         Integer[] rightArr = new Integer[0];
         if ( getLeft() != null )
             leftArr = getLeft().inorder();
-
+//		System.out.println(getValue());
         if ( getRight() != null )
             rightArr = getRight().inorder();
         //
@@ -143,7 +143,6 @@ public class IntBinTree {
         int count = 0;
         boolean hasChildren = false;
         if ( getLeft() != null ) {
-            //©Julian Kropp
             count += getLeft().countLeaves();
             hasChildren = true;
         }
@@ -271,7 +270,7 @@ public class IntBinTree {
             return true;
         } else {
             for (int i = 1; i < order.length; i++) {
-                if (order[i + 1] >= order[i]) {
+                if (order[i - 1] >= order[i]) {
                     return false;
                 }
             }
@@ -301,7 +300,7 @@ public class IntBinTree {
                 height = rightHeight;
             } else {
                 if ((height - rightHeight) > 1)
-                    return +1; // linker Teilbaum um mehr als 1 hoher als rechter => kein AVL-Baum
+                    return -1; // linker Teilbaum um mehr als 1 hoher als rechter => kein AVL-Baum
             }
         } else { // kein rechter Teilbaum, das heißt Hoehe links muss <= 1
             if (height > 1) {

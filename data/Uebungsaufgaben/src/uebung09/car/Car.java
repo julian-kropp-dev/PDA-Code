@@ -39,7 +39,6 @@ public class Car {
 
     //setter
 
-
     public void setReifen(Reifen[] reifen) {
         this.reifen = reifen;
     }
@@ -63,6 +62,7 @@ public class Car {
     public void setTueren(int tueren) {
         this.tueren = tueren;
     }
+
 
     //features
 
